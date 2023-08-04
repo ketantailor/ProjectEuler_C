@@ -13,12 +13,14 @@ jobs:
 
     steps:
 
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
     - name: System Setup
       shell: bash
       run: |
         sudo apt update -y
         sudo apt install -qq build-essential cppcheck cpplint
-    - uses: actions/checkout@v3
     
     - name: Build
       run: make
