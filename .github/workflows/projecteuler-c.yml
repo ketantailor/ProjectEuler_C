@@ -12,10 +12,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: System Setup
+      shell: bash
+      run: |
+        sudo apt update -y
+        sudo apt install -qq build-essential cppcheck cpplint
     - uses: actions/checkout@v3
-    - name: make
+    
+    - name: Build
       run: make
-    - name: make lint
+    
+    - name: Check
       run: make lint
-    - name: make clean
+    
+    - name: Clean
       run: make clean
