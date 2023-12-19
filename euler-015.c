@@ -37,12 +37,12 @@ uint64 calculate_lattice_paths_iterative()
 {
     uint64 grid[M+1][N+1];
 
-    for (int i = 0; i <= M; i++) 
+    for (int i = 0; i <= M; i++)
     {
         grid[i][0] = 1;
     }
 
-    for (int j = 0; j <= N; j++) 
+    for (int j = 0; j <= N; j++)
     {
         grid[0][j] = 1;
     }
