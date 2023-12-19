@@ -6,9 +6,12 @@
  */
 
 #include <limits.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
+#define uint64 uint64_t
 
 int get_longest_collatz_sequence_count(int max);
 int get_collatz_sequence_count(int num);
@@ -49,7 +52,7 @@ int get_longest_collatz_sequence_count(int max)
 // Returns the length of the Collatz sequence for num
 int get_collatz_sequence_count(int num)
 {
-    long n = num;
+    uint64 n = num;
     int count = 0;
     while (n != 1)
     {
