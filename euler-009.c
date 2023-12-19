@@ -1,10 +1,13 @@
-// Project Euler - Problem 09: Special Pythagorean triplet
-// Compile with: c99 euler-009.c -o euler-009 -Wall -Wextra -pedantic
-// Windows: cl /W4 /nologo euler-009.c
+/*
+ * Project Euler - Problem 09: Special Pythagorean triplet
+ *
+ * Linux: c99 euler-009.c -o euler-009.bin -Wall -Wextra -pedantic
+ * Windows: cl /W4 /nologo euler-009.c
+ */
 
 #include <stdint.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 #define LIMIT 1000

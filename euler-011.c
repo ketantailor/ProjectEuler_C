@@ -1,11 +1,14 @@
-// Project Euler - Problem 11: Largest product in a grid
-// Compile with: c99 euler-011.c -o euler-011 -Wall -Wextra -pedantic
-// Windows: cl /W4 /nologo euler-011.c
+/*
+ * Project Euler - Problem 11: Largest product in a grid
+ *
+ * Linux: c99 euler-011.c -o euler-011.bin -Wall -Wextra -pedantic
+ * Windows: cl /W4 /nologo euler-011.c
+ */
 
 #include <stdbool.h>
 #include <stdint.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 #define uint64 uint64_t
@@ -55,7 +58,7 @@ int numbers[400] =
 };
 
 void euler011();
-int brute_force();
+int get_largest_product();
 
 int main(void)
 {
@@ -70,13 +73,13 @@ void euler011()
 {
     float start = (float)clock() / CLOCKS_PER_SEC;
 
-    int ans = brute_force();
+    int ans = get_largest_product();
 
     float elapsed = (float)clock() / CLOCKS_PER_SEC - start;
     printf("Answer: %d (elapsed: %fs)\n", ans, elapsed);
 }
 
-int brute_force()
+int get_largest_product()
 {
     int max_product = 0;
     for (int i = 0; i < 400; i++)

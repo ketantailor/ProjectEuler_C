@@ -1,18 +1,22 @@
-// Project Euler - Problem 12: Highly divisible triangular number
-// Compile with: c99 euler-012.c -o euler-012 -Wall -Wextra -pedantic -lm
-// Windows: cl /W4 /nologo euler-012.c
+/*
+ * Project Euler - Problem 12: Highly divisible triangular number
+ *
+ * Linux: c99 euler-012.c -o euler-012.bin -Wall -Wextra -pedantic -lm
+ * Windows: cl /W4 /nologo euler-012.c
+ */
 
+#include <inttypes.h>
+#include <math.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
-#include <math.h>
 
 #define uint64 uint64_t
 
 void euler012();
-int brute_force();
+uint64 calculate_first_triangle_number(uint64 num);
 uint64 calculate_triangle_number(uint64 index);
 uint64 calculate_divisor_count(uint64 num);
 uint64 calculate_divisor_count_2(uint64 num);
@@ -31,13 +35,14 @@ void euler012()
 {
     float start = (float)clock() / CLOCKS_PER_SEC;
 
-    uint64 ans = brute_force();
+    uint64 ans = calculate_first_triangle_number(500);
 
     float elapsed = (float)clock() / CLOCKS_PER_SEC - start;
-    printf("Answer: %ld (elapsed: %fs)\n", ans, elapsed);
+    printf("Answer: %" PRIu64 " (elapsed: %fs)\n", ans, elapsed);
 }
 
-int brute_force()
+// Find first triangle number with more than min_divisors divisors
+uint64 calculate_first_triangle_number(uint64 min_divisors)
 {
     uint64 i = 76576499;
     uint64 ans = 0;
@@ -55,7 +60,7 @@ int brute_force()
             ans = calculate_divisor_count_3(i) * calculate_divisor_count_3((i + 1) / 2);
         }
 
-        if (ans > 500)
+        if (ans > min_divisors)
             return i;
 
         i++;
@@ -92,7 +97,7 @@ uint64 calculate_divisor_count(uint64 num)
 uint64 calculate_divisor_count_2(uint64 num)
 {
     uint64 count = 0;
-    uint64 limit = sqrt(num);
+    uint64 limit = (uint64)sqrt((double)num);
     for (uint64 i = 1; i <= limit; i++)
     {
         if (num % i == 0)
