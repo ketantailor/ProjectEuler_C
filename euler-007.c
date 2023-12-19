@@ -1,7 +1,11 @@
-// Project Euler - Problem 07: 10001st prime
-// Compile with: c99 euler-007.c -o euler-007 -Wall -Wextra -pedantic -lm
-// Windows: cl /W4 /nologo euler-007.c
+/*
+ * Project Euler - Problem 07: 10001st prime
+ *
+ * Linux: c99 euler-007.c -o euler-007.bin -Wall -Wextra -pedantic
+ * Windows: cl /W4 /nologo euler-007.c
+ */
 
+#include <inttypes.h>
 #include <math.h>
 #include <stdbool.h>
 #include <stdint.h>
@@ -12,7 +16,7 @@
 #define u64 uint64_t
 
 void euler007();
-u64 nth_prime();
+u64 nth_prime(int n);
 bool is_prime(u64 num);
 bool is_prime_2(u64 num);
 
@@ -33,7 +37,7 @@ void euler007()
 
     float elapsed = (float)clock() / CLOCKS_PER_SEC - start;
 
-    printf("Answer: %lu (elapsed: %fs)\n", ans, elapsed);
+    printf("Answer: %" PRIu64 " (elapsed: %fs)\n", ans, elapsed);
 }
 
 u64 nth_prime(int n)
@@ -68,7 +72,7 @@ bool is_prime_2(u64 num)
     if (num % 2 == 0) return false;
 
     u64 i = 3;
-    u64 range = sqrt(num);
+    u64 range = (u64)sqrt((double)num);
     while (i <= range)
     {
         if (num % i == 0) return false;
