@@ -1,13 +1,17 @@
-// Project Euler - Problem 04: Largest palindrome product
-// Compile with: c99 euler-004.c -o euler-004.bin -Wall -Wextra -pedantic
-// Windows: cl /W4 /nologo euler-004.c
+/*
+ * Project Euler - Problem 04: Largest palindrome product
+ *
+ * Linux: c99 euler-004.c -o euler-004.bin -Wall -Wextra -pedantic
+ * Windows: cl /W4 /nologo euler-004.c
+ */
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 void euler004();
 int largest_palindrome_product();
-int is_palindromic(int num);
+bool is_palindromic(int num);
 
 int main(void)
 {
@@ -21,7 +25,7 @@ int main(void)
 void euler004()
 {
     int ans = largest_palindrome_product();
-    printf("\tAnswer: %i\n", ans);
+    printf("Answer: %i\n", ans);
 }
 
 int largest_palindrome_product()
@@ -45,7 +49,8 @@ int largest_palindrome_product()
     return max_product;
 }
 
-int is_palindromic(int num)
+// Returns true if num reads the same both ways, e.g. 12321.
+bool is_palindromic(int num)
 {
     int n = num, r = 0;
     while (n > 0)
