@@ -1,12 +1,15 @@
-// Project Euler - Problem 02: Even Fibonacci numbers
-// Compile with: c99 euler-002.c -o euler-002.bin -Wall -Wextra -pedantic
-// Windows: cl /W4 /nologo euler-002.c
+/*
+ * Project Euler - Problem 02: Even Fibonacci numbers
+ *
+ * Linux: c99 euler-002.c -o euler-002.bin -Wall -Wextra -pedantic
+ * Windows: cl /W4 /nologo euler-002.c
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 
 void euler02();
-int even_fibonacci_numbers(int num);
+int sum_even_fibonacci_numbers(int num);
 
 int main(void)
 {
@@ -19,11 +22,12 @@ int main(void)
 
 void euler02()
 {
-    int ans = even_fibonacci_numbers(4000000);
+    int ans = sum_even_fibonacci_numbers(4000000);
     printf("Answer: %i\n", ans);
 }
 
-int even_fibonacci_numbers(int num)
+// Sum all even numbers in the Fibonacci sequence up to num.
+int sum_even_fibonacci_numbers(int num)
 {
     int fibA = 1;
     int fibB = 1;
