@@ -71,6 +71,7 @@ lint:
 		euler-005.c \
 		euler-006.c \
 		euler-007.c \
+		euler-008.c \
 		euler-009.c \
 		euler-010.c \
 		euler-011.c \
