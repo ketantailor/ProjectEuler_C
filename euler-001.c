@@ -1,6 +1,9 @@
-// Project Euler - Problem 01: Multiples of 3 or 5
-// Compile with: c99 euler-001.c -o euler-001.bin -Wall -Wextra -pedantic
-// Windows: cl /W4 /nologo euler-001.c
+/*
+ * Project Euler - Problem 01: Multiples of 3 or 5
+ *
+ * Linux: c99 euler-001.c -o euler-001.bin -Wall -Wextra -pedantic
+ * Windows: cl /W4 /nologo euler-001.c
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,6 +26,7 @@ void euler01()
     printf("Answer: %i\n", ans);
 }
 
+// Sum all numbers up to num that are divisible by 3 or 5.
 int sum_multiples_of_three_and_five(int num)
 {
     int sum = 0;
