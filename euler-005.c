@@ -1,7 +1,11 @@
-// Project Euler - Problem 05: Smallest multiple
-// Compile with: c99 euler-005.c -o euler-005.bin -Wall -Wextra -pedantic
-// Windows: cl /W4 /nologo euler-005.c
+/*
+ * Project Euler - Problem 05: Smallest multiple
+ *
+ * Linux: c99 euler-005.c -o euler-005.bin -Wall -Wextra -pedantic
+ * Windows: cl /W4 /nologo euler-005.c
+ */
 
+#include <inttypes.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -24,7 +28,7 @@ int main(void)
 void euler005()
 {
     u64 ans = smallest_multiple();
-    printf("Answer: %ld\n", ans);
+    printf("Answer: %" PRIu64 "\n", ans);
 }
 
 u64 smallest_multiple()
