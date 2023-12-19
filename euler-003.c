@@ -1,7 +1,11 @@
-// Project Euler - Problem 03: Largest prime factor
-// Compile with: c99 euler-003.c -o euler-003.bin -Wall -Wextra -pedantic -lm
-// Windows: cl /W4 /nologo euler-003.c
+/*
+ * Project Euler - Problem 03: Largest prime factor
+ *
+ * Linux: c99 euler-003.c -o euler-003.bin -Wall -Wextra -pedantic -lm
+ * Windows: cl /W4 /nologo euler-003.c
+ */
 
+#include <inttypes.h>
 #include <math.h>
 #include <stdbool.h>
 #include <stdint.h>
@@ -26,12 +30,13 @@ int main(void)
 void euler003()
 {
     u64 ans = largest_prime_factor(600851475143);
-    printf("Answer: %li\n", ans);
+    printf("Answer: %" PRIu64 "\n", ans);
 }
 
+// Return the largest prime factor
 u64 largest_prime_factor(u64 n)
 {
-    u64 start = llroundl(sqrtl(n));
+    u64 start = llroundl(sqrtl((long double)n));
     for (u64 i = start; i >= 2; i--)
     {
         if (n % i == 0)
@@ -45,9 +50,10 @@ u64 largest_prime_factor(u64 n)
     return 0;
 }
 
+// Returns true if num is prime
 bool is_prime(u64 num)
 {
-    u64 limit = llroundl(sqrtl(num));
+    u64 limit = llroundl(sqrtl((long double)num));
     for (u64 i = 2; i <= limit; i++)
     {
         if (num % i == 0) return false;
