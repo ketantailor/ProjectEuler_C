@@ -1,7 +1,11 @@
-// Project Euler - Problem 06: Sum square difference
-// Compile with: c99 euler-006.c -o euler-006 -Wall -Wextra -pedantic
-// Windows: cl /W4 /nologo euler-006.c
+/*
+ * Project Euler - Problem 06: Sum square difference
+ *
+ * Linux: c99 euler-006.c -o euler-006.bin -Wall -Wextra -pedantic
+ * Windows: cl /W4 /nologo euler-006.c
+ */
 
+#include <inttypes.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -26,8 +30,8 @@ int main(void)
 
 void euler006()
 {
-    int ans = sum_square_difference(100);
-    printf("Answer: %d\n", ans);
+    uint64 ans = sum_square_difference(100);
+    printf("Answer: %" PRIu64 "\n", ans);
 }
 
 uint64 sum_square_difference(int num)
