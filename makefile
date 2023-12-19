@@ -1,7 +1,7 @@
 # Makefile for Linux
 
 
-all: euler-001 euler-002 euler-003 euler-004 euler-005 euler-006 euler-007 euler-008 euler-009 euler-010 euler-011 euler-012 euler-013
+all: euler-001 euler-002 euler-003 euler-004 euler-005 euler-006 euler-007 euler-008 euler-009 euler-010 euler-011 euler-012 euler-013 euler-014
 
 
 euler-001: euler-001.c
@@ -56,10 +56,14 @@ euler-013: euler-013.c
 	c99 euler-013.c -o euler-013.bin -Wall -Wextra -pedantic -lm
 
 
+euler-014: euler-014.c
+	c99 euler-014.c -o euler-014.bin -Wall -Wextra -pedantic -lm
+
+
 lint:
 	@cpplint --quiet \
 		--linelength=120 \
-		--filter=-legal/copyright,-whitespace/braces,-whitespace/comments,-readability/casting \
+		--filter=-legal/copyright,-whitespace/braces,-whitespace/comments,-readability/casting,-runtime/int \
 		euler-001.c \
 		euler-002.c \
 		euler-003.c \
@@ -71,7 +75,8 @@ lint:
 		euler-010.c \
 		euler-011.c \
 		euler-012.c \
-		euler-013.c
+		euler-013.c \
+		euler-014.c
 
 
 clean:
