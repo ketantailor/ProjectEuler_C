@@ -13,7 +13,7 @@
 #include <time.h>
 
 #define uint64 uint64_t
-#define MAX_DIGITS 300
+#define MAX_DIGITS 302
 
 uint64 power_digit_sum(uint64 num);
 void double_digit_array(int* digits);
