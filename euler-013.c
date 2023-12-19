@@ -1,19 +1,20 @@
 /*
  * Project Euler - Problem 13: Large sum
  *
- * Linux: c99 euler-013.c -o euler-013.bin -Wall -Wextra -pedantic && ./euler-013.bin
- * Windows: cl /W4 /nologo euler-013.c; .\euler-013.exe
+ * Linux: c99 euler-013.c -o euler-013.bin -Wall -Wextra -pedantic
+ * Windows: cl /W4 /nologo /wd6053 euler-013.c
  */
 
 #ifdef _MSC_VER
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
+#include <inttypes.h>
 #include <stdint.h>
-#include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #define uint64 uint64_t
 
@@ -25,7 +26,7 @@ int main(void)
     float start = (float)clock() / CLOCKS_PER_SEC;
 
     uint64 ans = large_sum();
-    printf("Answer: %lu\n", ans);
+    printf("Answer: %" PRIu64 "\n", ans);
 
     float elapsed = (float)clock() / CLOCKS_PER_SEC - start;
     printf("Completed in %fs\n", elapsed);
