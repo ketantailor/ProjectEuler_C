@@ -61,21 +61,25 @@ bool is_prime(u64 num)
 {
     for (u64 x = 2; x < num; x++)
     {
-        if (num % x == 0) return false;
+        if (num % x == 0)
+            return false;
     }
     return true;
 }
 
 bool is_prime_2(u64 num)
 {
-    if (num == 2) return true;
-    if (num % 2 == 0) return false;
+    if (num == 2)
+        return true;
+    if (num % 2 == 0)
+        return false;
 
     u64 i = 3;
     u64 range = (u64)sqrt((double)num);
     while (i <= range)
     {
-        if (num % i == 0) return false;
+        if (num % i == 0)
+            return false;
         i += 1;
     }
     return true;

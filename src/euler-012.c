@@ -56,7 +56,9 @@ uint64 calculate_first_triangle_number(uint64 min_divisors)
         if (i % 2 == 0)
         {
             ans = calculate_divisor_count_3(i / 2) * calculate_divisor_count_3(i + 1);
-        } else {
+        }
+        else
+        {
             ans = calculate_divisor_count_3(i) * calculate_divisor_count_3((i + 1) / 2);
         }
 

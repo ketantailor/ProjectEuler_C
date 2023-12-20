@@ -41,7 +41,7 @@ int calculate_triplet()
         for (int b = a + 1; b <= LIMIT; b++)
         {
             int c = 1000 - a - b;
-            if (a*a + b*b == c*c)
+            if (a * a + b * b == c * c)
             {
                 return a * b * c;
             }

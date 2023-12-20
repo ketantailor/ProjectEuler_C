@@ -56,7 +56,8 @@ bool is_prime(u64 num)
     u64 limit = llroundl(sqrtl((long double)num));
     for (u64 i = 2; i <= limit; i++)
     {
-        if (num % i == 0) return false;
+        if (num % i == 0)
+            return false;
     }
     return true;
 }

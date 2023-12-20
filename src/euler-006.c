@@ -46,7 +46,7 @@ uint64 sum_of_squares(int n)
     uint64 ans = 0;
     for (int i = 1; i <= n; i++)
     {
-        ans += i*i;
+        ans += i * i;
     }
     return ans;
 }
@@ -65,7 +65,7 @@ uint64 square_of_sums(int n)
 uint64 square_of_sums_2(int n)
 {
     // (1+2+...+99+100)^2 = (101*50)^2
-    uint64 sum = (n+1) * (n/2);
+    uint64 sum = (n + 1) * (n / 2);
     uint64 ans = sum * sum;
     return ans;
 }

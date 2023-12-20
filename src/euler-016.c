@@ -16,7 +16,7 @@
 #define MAX_DIGITS 302
 
 uint64 power_digit_sum(uint64 num);
-void double_digit_array(int* digits);
+void double_digit_array(int *digits);
 
 int main(void)
 {
@@ -55,7 +55,7 @@ uint64 power_digit_sum(uint64 num)
 }
 
 // Takes an array of digits and doubles the whole number in place
-void double_digit_array(int* digits)
+void double_digit_array(int *digits)
 {
     int carry[MAX_DIGITS];
     for (unsigned int c = 0; c < MAX_DIGITS; c++)
@@ -70,10 +70,11 @@ void double_digit_array(int* digits)
         digits[d] = v2 % 10;
         if (d != 0)
         {
-            carry[d -1] = v2 / 10;
+            carry[d - 1] = v2 / 10;
         }
 
-        if (d == 0) break;
+        if (d == 0)
+            break;
         d--;
     }
 }

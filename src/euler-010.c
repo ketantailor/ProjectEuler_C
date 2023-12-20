@@ -53,16 +53,18 @@ uint64 sum_all_primes(int max)
 
 bool is_prime(uint64 num)
 {
-    if (num == 2) return true;
-    if (num % 2 == 0) return false;
+    if (num == 2)
+        return true;
+    if (num % 2 == 0)
+        return false;
 
     register uint64 i = 3;
     register uint64 range = (uint64)sqrt((double)num);
     while (i <= range)
     {
-        if (num % i == 0) return false;
+        if (num % i == 0)
+            return false;
         i += 1;
     }
     return true;
 }
-

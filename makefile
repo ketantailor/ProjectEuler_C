@@ -94,6 +94,9 @@ lint:
 		src/euler-016.c
 
 
+format:
+	clang-format -i src/*.c
+
 clean:
 	@rm *.bin -f
 	@rm *.exe -f

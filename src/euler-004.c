@@ -30,7 +30,7 @@ void euler004()
 
 int largest_palindrome_product()
 {
-    //int max_a = 0, max_b = 0;
+    // int max_a = 0, max_b = 0;
     int max_product = 0;
     for (int a = 10; a < 1000; a++)
     {
@@ -40,8 +40,8 @@ int largest_palindrome_product()
 
             if (n > max_product && is_palindromic(n))
             {
-                //max_a = a;
-                //max_b = b;
+                // max_a = a;
+                // max_b = b;
                 max_product = a * b;
             }
         }
