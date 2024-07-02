@@ -18,6 +18,7 @@
 void euler012();
 uint64 calculate_first_triangle_number(uint64 num);
 uint64 calculate_triangle_number(uint64 index);
+uint64 calculate_triangle_number_2(uint64 num);
 uint64 calculate_divisor_count(uint64 num);
 uint64 calculate_divisor_count_2(uint64 num);
 uint64 calculate_divisor_count_3(uint64 num);
