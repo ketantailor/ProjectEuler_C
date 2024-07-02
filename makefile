@@ -99,6 +99,7 @@ lint:
 		src/euler-014.c \
 		src/euler-015.c \
 		src/euler-016.c
+	@cppcheck --std=c99 --quiet src/
 
 
 # Formats all *.c files based on the format specified in .clang-format
