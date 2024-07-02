@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void euler02();
+void euler02(void);
 int sum_even_fibonacci_numbers(int num);
 
 int main(void)
@@ -20,7 +20,7 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-void euler02()
+void euler02(void)
 {
     int ans = sum_even_fibonacci_numbers(4000000);
     printf("Answer: %i\n", ans);

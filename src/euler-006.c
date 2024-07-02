@@ -13,7 +13,7 @@
 
 #define uint64 uint64_t
 
-void euler006();
+void euler006(void);
 uint64 sum_square_difference(int num);
 uint64 sum_of_squares(int n);
 uint64 square_of_sums(int n);
@@ -28,7 +28,7 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-void euler006()
+void euler006(void)
 {
     uint64 ans = sum_square_difference(100);
     printf("Answer: %" PRIu64 "\n", ans);

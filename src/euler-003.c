@@ -14,7 +14,7 @@
 
 #define u64 uint64_t
 
-void euler003();
+void euler003(void);
 u64 largest_prime_factor(u64 n);
 bool is_prime(u64 num);
 
@@ -27,7 +27,7 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-void euler003()
+void euler003(void)
 {
     u64 ans = largest_prime_factor(600851475143);
     printf("Answer: %" PRIu64 "\n", ans);

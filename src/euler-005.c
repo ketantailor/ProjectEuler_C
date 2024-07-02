@@ -13,8 +13,8 @@
 
 #define u64 uint64_t
 
-void euler005();
-u64 smallest_multiple();
+void euler005(void);
+u64 smallest_multiple(void);
 
 int main(void)
 {
@@ -25,13 +25,13 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-void euler005()
+void euler005(void)
 {
     u64 ans = smallest_multiple();
     printf("Answer: %" PRIu64 "\n", ans);
 }
 
-u64 smallest_multiple()
+u64 smallest_multiple(void)
 {
     // get the max number it could be
     u64 max = 1;
