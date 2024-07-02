@@ -20,7 +20,7 @@ jobs:
       shell: bash
       run: |
         sudo apt update -y
-        sudo apt install -qq build-essential cppcheck cpplint
+        sudo apt install -qq build-essential clang clang-format cppcheck cpplint
     
     - name: Build
       run: make

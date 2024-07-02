@@ -75,6 +75,10 @@ euler-016: setup src/euler-016.c
 	$(CC) $(CFLAGS) src/euler-016.c -o bin/euler-016.bin
 
 
+clang-001: setup src/euler-001.c
+	clang $(CFLAGS) src/euler-001.c -o bin/euler-001.bin
+
+
 lint:
 	@cpplint --quiet \
 		--linelength=120 \
