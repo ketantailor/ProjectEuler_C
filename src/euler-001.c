@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void euler01(void);
+void euler01();
 int sum_multiples_of_three_and_five(int num);
 
 int main(void)
@@ -20,7 +20,7 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-void euler01(void)
+void euler01()
 {
     int ans = sum_multiples_of_three_and_five(1000);
     printf("Answer: %i\n", ans);

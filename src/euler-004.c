@@ -9,8 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void euler004(void);
-int largest_palindrome_product(void);
+void euler004();
+int largest_palindrome_product();
 bool is_palindromic(int num);
 
 int main(void)
@@ -22,13 +22,13 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-void euler004(void)
+void euler004()
 {
     int ans = largest_palindrome_product();
     printf("Answer: %i\n", ans);
 }
 
-int largest_palindrome_product(void)
+int largest_palindrome_product()
 {
     // int max_a = 0, max_b = 0;
     int max_product = 0;
