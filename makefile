@@ -59,6 +59,7 @@ euler-012: setup src/euler-012.c
 
 
 euler-013: setup src/euler-013.c
+	cp src/euler-013.txt bin/
 	$(CC) $(CFLAGS) src/euler-013.c -o bin/euler-013.bin
 
 
