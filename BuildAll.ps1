@@ -46,3 +46,6 @@ if (!$?) { throw "Failed while building euler-015.c" }
 
 cl /W4 /Fe:bin/ /Fo:bin/ /analyze:autolog- /sdl /nologo .\src\euler-016.c
 if (!$?) { throw "Failed while building euler-016.c" }
+
+cl /W4 /Fe:bin/ /Fo:bin/ /analyze:autolog- /sdl /nologo .\src\euler-017.c
+if (!$?) { throw "Failed while building euler-017.c" }

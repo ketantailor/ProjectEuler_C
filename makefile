@@ -77,6 +77,10 @@ euler-016: setup src/euler-016.c
 	$(CC) $(CFLAGS) src/euler-016.c -o bin/euler-016.bin
 
 
+euler-017: setup src/euler-017.c
+	$(CC) $(CFLAGS) src/euler-017.c -o bin/euler-017.bin
+
+
 clang-001: setup src/euler-001.c
 	clang $(CFLAGS) src/euler-001.c -o bin/euler-001.bin
 
