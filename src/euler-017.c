@@ -10,15 +10,29 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 
 #define uint64 uint64_t
 
 
+char *numbers_small[] =
+{
+    "", "one", "two", "three", "four", "five",
+    "six", "seven", "eight", "nine", "ten",
+    "eleven", "twelve", "thirteen", "fourteen", "fifteen", 
+    "sixteen", "seventeen", "eighteen", "nineteen"
+};
+
+char *numbers_tens[] =
+{
+    "", "", "twenty", "thirty", "forty", "fifty",
+    "sixty", "seventy", "eighty", "ninety"
+};
+
 uint64 sum_number_letter_count(int num);
 uint64 number_letter_count(int num);
-uint64 low_number_letter_count(int single);
 
 
 int main(void)
@@ -58,126 +72,28 @@ uint64 number_letter_count(int num)
 
     if (thousand > 0)
     {
-        // n thousand
-        count += number_letter_count(thousand / 1000) + 8;
+        count += number_letter_count(thousand / 1000) + strlen("thousand");
     }
     
     if ((thousand != 0 || hundred != 0) && (ten != 0 || single != 0))
     {
-        // and
-        count += 3;
+        count += strlen("and");
     }
 
     if (hundred != 0)
     {
-        // n hundred
-        count += number_letter_count(hundred / 100) + 7;
+        count += number_letter_count(hundred / 100) + strlen("hundred");
     }
 
-    switch (ten)
+    if (ten == 10)
     {
-        case 10:
-            count += low_number_letter_count(10 + single);
-            break;
-        case 20:
-            count += 6; // twenty
-            break;
-        case 30:
-            count += 6; // thirty
-            break;
-        case 40:
-            count += 5; // forty
-            break;
-        case 50:
-            count += 5; // fifty
-            break;
-        case 60:
-            count += 5; // sixty
-            break;
-        case 70:
-            count += 7; // seventy
-            break;
-        case 80:
-            count += 6; // eighty
-            break;
-        case 90:
-            count += 6; // ninety
-            break;
+        count += strlen(numbers_small[10 + single]);
     }
-
-    if (ten != 10 && single != 0)
+    else
     {
-        count += low_number_letter_count(single);
+        count += strlen(numbers_tens[ten / 10]);
+        count += strlen(numbers_small[single]);
     }
 
     return count;
 }
-
-uint64 low_number_letter_count(int single)
-{
-    uint64 count = 0;
-
-    switch (single)
-    {
-        case 1:
-            count += 3; // one
-            break;
-        case 2:
-            count += 3; // two
-            break;
-        case 3:
-            count += 5; // three
-            break;
-        case 4:
-            count += 4; // four
-            break;
-        case 5:
-            count += 4; // five
-            break;
-        case 6:
-            count += 3; // six
-            break;
-        case 7:
-            count += 5; // seven
-            break;
-        case 8:
-            count += 5; // eight
-            break;
-        case 9:
-            count += 4; // nine
-            break;
-        case 10:
-            count += 3; // ten
-            break;
-        case 11:
-            count += 6; // eleven
-            break;
-        case 12:
-            count += 6; // twelve
-            break;
-        case 13:
-            count += 8; // thirteen
-            break;
-        case 14:
-            count += 8; // fourteen
-            break;
-        case 15:
-            count += 7; // fifteen
-            break;
-        case 16:
-            count += 7; // sixteen
-            break;
-        case 17:
-            count += 9; // seventeen
-            break;
-        case 18:
-            count += 8; // eighteen
-            break;
-        case 19:
-            count += 8; // nineteen
-            break;
-    }
-
-    return count;
-}
-
