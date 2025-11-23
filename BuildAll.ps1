@@ -1,3 +1,5 @@
+New-Item -Path 'bin' -ItemType Directory -Force
+
 cl /W4 /Fe:bin/ /Fo:bin/ /analyze:autolog- /sdl /nologo .\src\euler-001.c
 if (!$?) { throw "Failed while building euler-001.c" }
 
