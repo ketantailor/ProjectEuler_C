@@ -1,4 +1,4 @@
-name: Project Euler in C
+name: Build
 
 on:
   push:
@@ -8,8 +8,13 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+      fail-fast: true
+    
+    name: Build ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
     steps:
 
@@ -20,7 +25,7 @@ jobs:
       shell: bash
       run: |
         sudo apt update -y
-        sudo apt install -qq build-essential clang clang-format cppcheck cpplint
+        sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential clang clang-format cppcheck cpplint
     
     - name: Build
       run: make
